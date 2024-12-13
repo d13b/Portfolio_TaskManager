@@ -17,9 +17,29 @@ namespace Portfolio_TaskManager
             InitializeComponent();
         }
 
+        DataTable TaskList = new DataTable();
+        bool editMode = false;
+
         private void formMain_Load(object sender, EventArgs e)
         {
+            //Column Creation
+            TaskList.Columns.Add("Title");
+            TaskList.Columns.Add("Description");
+            dgvTasks.DataSource = TaskList;
+        }
 
+        private void btnAddTask_Click(object sender, EventArgs e)
+        {
+            // Emptying textboxes for Quality of Life
+            txtTaskTitle.Text = "";
+            txtTaskDescription.Text = "";
+        }
+
+        private void btnEditTask_Click(object sender, EventArgs e)
+        {
+            editMode = true;
+            txtTaskTitle.Text = TaskList.Rows[dgvTasks.CurrentCell.RowIndex].ItemArray[0].ToString();
+            txtTaskDescription.Text = TaskList.Rows[dgvTasks.CurrentCell.RowIndex].ItemArray[1].ToString();
         }
     }
 }

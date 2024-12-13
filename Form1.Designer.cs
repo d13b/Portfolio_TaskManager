@@ -36,8 +36,8 @@
             this.pnlTitleBack = new System.Windows.Forms.Panel();
             this.lblTaskTitle = new System.Windows.Forms.Label();
             this.txtTaskTitle = new System.Windows.Forms.TextBox();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblTaskDescription = new System.Windows.Forms.Label();
+            this.txtTaskDescription = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).BeginInit();
             this.pnlTitleBack.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,7 @@
             this.btnAddTask.TabIndex = 1;
             this.btnAddTask.Text = "Add";
             this.btnAddTask.UseVisualStyleBackColor = true;
+            this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
             // 
             // btnEditTask
             // 
@@ -71,6 +72,7 @@
             this.btnEditTask.TabIndex = 2;
             this.btnEditTask.Text = "Edit";
             this.btnEditTask.UseVisualStyleBackColor = true;
+            this.btnEditTask.Click += new System.EventHandler(this.btnEditTask_Click);
             // 
             // btnRemoveTask
             // 
@@ -123,24 +125,24 @@
             this.txtTaskTitle.Size = new System.Drawing.Size(776, 20);
             this.txtTaskTitle.TabIndex = 7;
             // 
-            // lblDescription
+            // lblTaskDescription
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblDescription.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDescription.Location = new System.Drawing.Point(345, 132);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(109, 16);
-            this.lblDescription.TabIndex = 8;
-            this.lblDescription.Text = "Task Description";
-            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTaskDescription.AutoSize = true;
+            this.lblTaskDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblTaskDescription.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTaskDescription.Location = new System.Drawing.Point(345, 132);
+            this.lblTaskDescription.Name = "lblTaskDescription";
+            this.lblTaskDescription.Size = new System.Drawing.Size(109, 16);
+            this.lblTaskDescription.TabIndex = 8;
+            this.lblTaskDescription.Text = "Task Description";
+            this.lblTaskDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtDescription
+            // txtTaskDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(13, 151);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(775, 20);
-            this.txtDescription.TabIndex = 9;
+            this.txtTaskDescription.Location = new System.Drawing.Point(13, 151);
+            this.txtTaskDescription.Name = "txtTaskDescription";
+            this.txtTaskDescription.Size = new System.Drawing.Size(775, 20);
+            this.txtTaskDescription.TabIndex = 9;
             // 
             // formMain
             // 
@@ -148,8 +150,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 528);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.txtTaskDescription);
+            this.Controls.Add(this.lblTaskDescription);
             this.Controls.Add(this.txtTaskTitle);
             this.Controls.Add(this.lblTaskTitle);
             this.Controls.Add(this.pnlTitleBack);
@@ -177,8 +179,8 @@
         private System.Windows.Forms.Panel pnlTitleBack;
         private System.Windows.Forms.Label lblTaskTitle;
         private System.Windows.Forms.TextBox txtTaskTitle;
-        private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label lblTaskDescription;
+        private System.Windows.Forms.TextBox txtTaskDescription;
     }
 }
 
