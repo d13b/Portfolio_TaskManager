@@ -17,7 +17,7 @@ namespace Portfolio_TaskManager
             InitializeComponent();
         }
 
-        private void lblDescription_Click(object sender, EventArgs e)
+        private void formMain_Load(object sender, EventArgs e)
         {
 
         }

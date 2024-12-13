@@ -44,6 +44,8 @@
             // 
             // dgvTasks
             // 
+            this.dgvTasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTasks.BackgroundColor = System.Drawing.Color.White;
             this.dgvTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTasks.Location = new System.Drawing.Point(12, 217);
             this.dgvTasks.Name = "dgvTasks";
@@ -87,7 +89,7 @@
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(802, 85);
+            this.lblTitle.Size = new System.Drawing.Size(800, 85);
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "The Task Manager";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,21 +98,23 @@
             // 
             this.pnlTitleBack.BackColor = System.Drawing.Color.Olive;
             this.pnlTitleBack.Controls.Add(this.lblTitle);
-            this.pnlTitleBack.Location = new System.Drawing.Point(0, -1);
+            this.pnlTitleBack.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitleBack.Location = new System.Drawing.Point(0, 0);
             this.pnlTitleBack.Name = "pnlTitleBack";
-            this.pnlTitleBack.Size = new System.Drawing.Size(802, 85);
+            this.pnlTitleBack.Size = new System.Drawing.Size(800, 85);
             this.pnlTitleBack.TabIndex = 5;
             // 
             // lblTaskTitle
             // 
-            this.lblTaskTitle.AutoSize = true;
+            this.lblTaskTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTaskTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaskTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTaskTitle.Location = new System.Drawing.Point(366, 87);
+            this.lblTaskTitle.Location = new System.Drawing.Point(0, 85);
             this.lblTaskTitle.Name = "lblTaskTitle";
-            this.lblTaskTitle.Size = new System.Drawing.Size(67, 16);
+            this.lblTaskTitle.Size = new System.Drawing.Size(800, 19);
             this.lblTaskTitle.TabIndex = 6;
             this.lblTaskTitle.Text = "Task Title";
+            this.lblTaskTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtTaskTitle
             // 
@@ -124,12 +128,12 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lblDescription.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDescription.Location = new System.Drawing.Point(349, 132);
+            this.lblDescription.Location = new System.Drawing.Point(345, 132);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(109, 16);
             this.lblDescription.TabIndex = 8;
             this.lblDescription.Text = "Task Description";
-            this.lblDescription.Click += new System.EventHandler(this.lblDescription_Click);
+            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtDescription
             // 
@@ -155,6 +159,7 @@
             this.Controls.Add(this.dgvTasks);
             this.Name = "formMain";
             this.Text = "Task Manager";
+            this.Load += new System.EventHandler(this.formMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).EndInit();
             this.pnlTitleBack.ResumeLayout(false);
             this.ResumeLayout(false);
