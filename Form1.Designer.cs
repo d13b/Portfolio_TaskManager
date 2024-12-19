@@ -83,6 +83,7 @@
             this.btnRemoveTask.TabIndex = 3;
             this.btnRemoveTask.Text = "Remove";
             this.btnRemoveTask.UseVisualStyleBackColor = true;
+            this.btnRemoveTask.Click += new System.EventHandler(this.btnRemoveTask_Click);
             // 
             // lblTitle
             // 

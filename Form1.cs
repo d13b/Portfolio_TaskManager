@@ -41,5 +41,18 @@ namespace Portfolio_TaskManager
             txtTaskTitle.Text = TaskList.Rows[dgvTasks.CurrentCell.RowIndex].ItemArray[0].ToString();
             txtTaskDescription.Text = TaskList.Rows[dgvTasks.CurrentCell.RowIndex].ItemArray[1].ToString();
         }
+
+        private void btnRemoveTask_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TaskList.Rows[dgvTasks.CurrentCell.RowIndex].Delete();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+                MessageBox.Show("An error has occured and deletion has failed: " +ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
