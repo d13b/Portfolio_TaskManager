@@ -44,7 +44,14 @@ namespace Portfolio_TaskManager
         {
             try
             {
-                TaskList.Rows[dgvTasks.CurrentCell.RowIndex].Delete();
+                if(dgvTasks.CurrentCell != null)
+                {
+                    TaskList.Rows[dgvTasks.CurrentCell.RowIndex].Delete(); 
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Task To Delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
