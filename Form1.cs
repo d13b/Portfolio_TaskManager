@@ -18,7 +18,6 @@ namespace Portfolio_TaskManager
         }
 
         DataTable TaskList = new DataTable();
-        bool editMode = false;
 
         private void formMain_Load(object sender, EventArgs e)
         {
@@ -37,7 +36,6 @@ namespace Portfolio_TaskManager
 
         private void btnEditTask_Click(object sender, EventArgs e)
         {
-            editMode = true;
             txtTaskTitle.Text = TaskList.Rows[dgvTasks.CurrentCell.RowIndex].ItemArray[0].ToString();
             txtTaskDescription.Text = TaskList.Rows[dgvTasks.CurrentCell.RowIndex].ItemArray[1].ToString();
         }
