@@ -16,58 +16,49 @@ namespace Portfolio_TaskManager
         public formMain()
         {
             InitializeComponent();
+            InitializeTaskTable();
         }
 
-        DataTable TaskList = new DataTable();
-
-        private void formMain_Load(object sender, EventArgs e)
-        {
-            //Column Creation/Recreation
-            TaskList.Columns.Add("Title");
-            TaskList.Columns.Add("Description");
-            dgvTasks.DataSource = TaskList;
-        }
+        DataTable data = new DataTable();
 
         private void btnAddTask_Click(object sender, EventArgs e)
         {
-            // Emptying textboxes for Quality of Life
-            refresh();
+            DataRow row = data.NewRow();
+            row["Task Title"] = txtTaskTitle.Text;
+            row["Task Description"] = txtTaskDescription.Text;
+            row["Task Status"] = "Incomplete";
+            data.Rows.Add(row);
+        }
+
+        private void updateTable()
+        {
+            DataRow row = data.NewRow();
+            row["Task Title"] = txtTaskTitle.Text;
+            row["Task Description"] = txtTaskDescription.Text;
+            row["Task Status"] = "Incomplete";
+            data.Rows.Add(row);
+        }
+
+        // Sets up the columns for the task list
+        private void InitializeTaskTable()
+        {
+            data.Columns.Add("Task Title");
+            data.Columns.Add("Task Description");
+            data.Columns.Add("Task Status");
+            dgvTasks.DataSource = data;
         }
 
         private void btnEditTask_Click(object sender, EventArgs e)
         {
-            txtTaskTitle.Text = TaskList.Rows[dgvTasks.CurrentCell.RowIndex].ItemArray[0].ToString();
-            txtTaskDescription.Text = TaskList.Rows[dgvTasks.CurrentCell.RowIndex].ItemArray[1].ToString();
+            
         }
 
         private void btnRemoveTask_Click(object sender, EventArgs e)
         {
-            try
+            foreach (DataGridViewRow row in dgvTasks.SelectedRows)
             {
-                if(dgvTasks.CurrentCell != null)
-                {
-                    TaskList.Rows[dgvTasks.CurrentCell.RowIndex].Delete(); 
-                }
-                else
-                {
-                    MessageBox.Show("Please Select Task To Delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                dgvTasks.Rows.RemoveAt(row.Index);
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex);
-                MessageBox.Show("An error has occured and deletion has failed: " +ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        public void refresh()
-        {
-            // Refresh the datagridview to ensure new data is present in the UI.
-            dgvTasks.Refresh();
-
-            // Emptying textboxes for Quality of Life
-            txtTaskTitle.Text = "";
-            txtTaskDescription.Text = "";
         }
     }
 }

@@ -44,9 +44,14 @@
             // 
             // dgvTasks
             // 
+            this.dgvTasks.AllowUserToAddRows = false;
+            this.dgvTasks.AllowUserToDeleteRows = false;
+            this.dgvTasks.AllowUserToResizeColumns = false;
+            this.dgvTasks.AllowUserToResizeRows = false;
             this.dgvTasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTasks.BackgroundColor = System.Drawing.Color.White;
             this.dgvTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTasks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTasks.Location = new System.Drawing.Point(12, 217);
             this.dgvTasks.Name = "dgvTasks";
             this.dgvTasks.Size = new System.Drawing.Size(776, 299);
@@ -162,7 +167,6 @@
             this.Controls.Add(this.dgvTasks);
             this.Name = "formMain";
             this.Text = "Task Manager";
-            this.Load += new System.EventHandler(this.formMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).EndInit();
             this.pnlTitleBack.ResumeLayout(false);
             this.ResumeLayout(false);
