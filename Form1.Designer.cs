@@ -56,6 +56,7 @@
             this.dgvTasks.Name = "dgvTasks";
             this.dgvTasks.Size = new System.Drawing.Size(776, 299);
             this.dgvTasks.TabIndex = 0;
+            this.dgvTasks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTasks_CellClick);
             // 
             // btnAddTask
             // 
