@@ -54,6 +54,7 @@
             this.dgvTasks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTasks.Location = new System.Drawing.Point(12, 217);
             this.dgvTasks.Name = "dgvTasks";
+            this.dgvTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTasks.Size = new System.Drawing.Size(776, 299);
             this.dgvTasks.TabIndex = 0;
             this.dgvTasks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTasks_CellClick);
